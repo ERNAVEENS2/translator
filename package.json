@@ -2,7 +2,7 @@
   "name": "discord-live-translator",
   "version": "1.0.0",
   "main": "src/app.ts",
-  "author": "Felix Wotschofsky <hello@felisk.io>",
+  "author": "ATH infosystems",
   "license": "AGPL-3.0-only",
   "engines": {
     "node": "20"

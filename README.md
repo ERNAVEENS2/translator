@@ -1,9 +1,3 @@
-**✨ [NOW AVAILABLE AS FREE HOSTED BOT](https://livetranslator.xyz) 🎉**
-
-# Discord Live Translation Bot
-
-*This is the documentation for the re-written v2 version. [Original v1 Version](/tree/v1)*
-
 A bot that automatically translate voice chat into a user selectable language in order to provide an easy way to communicate through voice chat for individuals speaking different languages natively. This project was originally started during the 2019 Discord Hack Week hackathon.
 
 ## How to use

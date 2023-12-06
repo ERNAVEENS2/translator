@@ -1,4 +1,3 @@
-# Based on https://docs.docker.com/build/ci/github-actions/manage-tags-labels/
 
 name: Build and Publish Docker Images
 
@@ -14,7 +13,6 @@ jobs:
   build-bot:
     name: Build Bot
     runs-on: ubuntu-latest
-    # Skip for dependabot pushes due to lack of permissions
     if: github.event_name != 'push' || github.actor != 'dependabot[bot]'
     steps:
       - name: Free Disk Space
@@ -65,7 +63,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          # Disabled for reasons discussed in https://github.com/docker/build-push-action/issues/820
           provenance: false
           cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
           cache-to: type=inline
@@ -73,7 +70,6 @@ jobs:
   build-stt:
     name: Build STT
     runs-on: ubuntu-latest
-    # Skip for dependabot pushes due to lack of permissions
     if: github.event_name != 'push' || github.actor != 'dependabot[bot]'
     steps:
       - name: Checkout Repository
@@ -113,7 +109,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          # Disabled for reasons discussed in https://github.com/docker/build-push-action/issues/820
           provenance: false
           cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}/stt:latest
           cache-to: type=inline
